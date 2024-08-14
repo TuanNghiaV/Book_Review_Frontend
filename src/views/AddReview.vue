@@ -5,7 +5,7 @@
       <div class="ui form">
         <div class="field">
           <label>Reviewer</label>
-          <input type="text" v-model="review.reviewer" required />
+          <input type="text" v-model="review.reviewer" required/>
         </div>
         <div class="field">
           <label>Grade</label>
