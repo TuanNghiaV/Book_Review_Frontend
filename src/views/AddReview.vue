@@ -7,8 +7,8 @@
           <label>Reviewer</label>
           <input type="text" v-model="review.reviewer" required />
         </div>
-          <label>Grade</label>
         <div class="field">
+          <label>Grade</label>
           <input type="number" v-model="review.grade" required>
         </div>
         <div class="field">
