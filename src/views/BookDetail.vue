@@ -11,6 +11,7 @@
       <div v-for="(review, index) in book.reviews" :key="index" class="ui segment">
         <p><strong>Reviewer:</strong> {{ review.reviewer }}</p>
         <p><strong>Rating:</strong> 
+        <p><strong>Grade:</strong>{{ review.grade }}</p>
           <span v-for="star in Math.floor(review.rating)" :key="star" class="star">★</span>
         </p>
         <p><strong>Comment:</strong> {{ review.comment }}</p>
