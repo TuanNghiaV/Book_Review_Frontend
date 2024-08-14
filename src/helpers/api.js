@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const backendURL = 'https://book-review-backend-r4dz.onrender.com/books';
+const backendURL = 'https://book-review-backend-r4dz.onrender.com/books/';
 
 export const ViewAllBooks = async () => {
     try {
