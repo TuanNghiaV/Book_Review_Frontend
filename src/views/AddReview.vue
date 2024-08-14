@@ -8,10 +8,6 @@
           <input type="text" v-model="review.reviewer" required/>
         </div>
         <div class="field">
-          <label>Grade</label>
-          <input type="number" v-model="review.grade" required>
-        </div>
-        <div class="field">
           <label>Rating</label>
           <vue-star-rating
             :star-size="30"
@@ -51,7 +47,6 @@ export default {
       review: {
         reviewer: '',
         rating: 0, // Initialize rating as a number
-        grade: '',
         comment: '',
         date: new Date().toISOString().substring(0, 10) // Default to today's date, but this will be set automatically
       },
