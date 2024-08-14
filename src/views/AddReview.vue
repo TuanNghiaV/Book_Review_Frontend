@@ -5,11 +5,11 @@
       <div class="ui form">
         <div class="field">
           <label>Reviewer</label>
-          <input type="text" v-model="review.reviewer" required/>
+          <input type="text" v-model="review.reviewer" required />
         </div>
         <div class="field">
           <label>Grade</label>
-          <input type="number" v-model="review.grade" required>
+          <input type="number" v-model="review.grade" min="0" max="100" required />
         </div>
         <div class="field">
           <label>Rating</label>
@@ -50,10 +50,10 @@ export default {
     return {
       review: {
         reviewer: '',
-        rating: 0, // Initialize rating as a number
-        grade: '',
+        grade: '', // New grade field
+        rating: 0,
         comment: '',
-        date: new Date().toISOString().substring(0, 10) // Default to today's date, but this will be set automatically
+        date: new Date().toISOString().substring(0, 10) // Set today's date by default
       },
       isSubmitting: false,
       errorMessage: '',
@@ -75,13 +75,12 @@ export default {
       try {
         await AddReview(this.$route.params.id, this.review);
         this.successMessage = 'Review added successfully!';
-        this.flash('Review added successfully')
-        // Optionally reset the form or redirect
+        this.flash('Review added successfully');
         this.$router.push(`/books/show/${this.$route.params.id}`);
       } catch (error) {
         this.errorMessage = 'Error adding review. Please try again.';
         console.error('Error adding review:', error);
-        this.flash('Error adding review. Please try again.')
+        this.flash('Error adding review. Please try again.', 'error');
       } finally {
         this.isSubmitting = false;
       }
@@ -97,5 +96,4 @@ export default {
 .success {
   color: green;
 }
-
 </style>
